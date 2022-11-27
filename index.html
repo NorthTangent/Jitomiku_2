@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no">
+    <title>じとめみくじ</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&family=Noto+Serif+JP:wght@400;700&display=swap');
+    </style>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/yakuhanjp@3.4.1/dist/css/yakuhanjp_s-noto.min.css">
+    <link rel="stylesheet" href="omikuji-style.css">
+</head>
+<body>
+    <div id="app">
+        <div id="gamearea">
+            <transition name="start">
+                <div id="first" v-if="page == 0"></div>
+            </transition>
+            <transition appear name="start">
+                <div id="home" v-if="page == 1">
+                    <img src="images/Logo.png" alt="じとめみくじロゴ" class="logo">
+                    <div class="version">{{ ver }}</div>
+                    <img src="images/Button_引く.png" alt="" class="button select_start" @click.once="nextpage">
+                    <img src="images/Button_あそびかた.png" alt="" class="button">
+                </div>
+            </transition>
+        </div>
+    </div>
+    <script src="https://unpkg.com/vue@3.2.45/dist/vue.global.js"></script>
+    <script src="main.js"></script>
+</body> 
+</html>
