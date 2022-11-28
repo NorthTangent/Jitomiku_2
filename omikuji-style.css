@@ -25,7 +25,7 @@
 #home img.button{
     width: 70%;
 }
-#home img.button:hover{
+#home img.button:active{
     scale: 0.95;
 }
 #home div.version{
